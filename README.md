@@ -17,7 +17,7 @@
 
 ## Features
 
-- Bilinguale English and French
+- Bilingual English and French
 - 3 difficulty levels
 - Dark mode supporting system preference and manual selection
 
