@@ -18,7 +18,7 @@ const LanguageSwitch = () => {
     }
   };
   return (
-    <div className="duration-200 text-gray-400 dark:tetx-gray-300 rounded-lg flex flex-col items-center mb-4 self-end">
+    <div className="duration-200 text-gray-400 dark:text-gray-300 rounded-lg flex flex-col items-center mb-4 fixed">
       {options.map((option) => {
         return (
           <div
