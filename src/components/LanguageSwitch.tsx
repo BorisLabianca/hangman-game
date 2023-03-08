@@ -18,12 +18,12 @@ const LanguageSwitch = () => {
     }
   };
   return (
-    <div className="duration-200 text-gray-400 dark:text-gray-300 rounded-lg flex flex-col items-center mb-4 fixed">
+    <div className="duration-200 text-gray-400 dark:text-gray-300 rounded-lg flex flex-col items-center mb-4 fixed top-40 right-2">
       {options.map((option) => {
         return (
           <div
             key={option.language}
-            className={`h-8 leading-9 rounded-full flex justify-center items-center ${
+            className={`h-8 w-auto text-lg leading-9 rounded-full flex justify-center items-center ${
               language === option.language && "text-sky-600"
             } font-bold cursor-pointer`}
             onClick={() => {

@@ -79,7 +79,7 @@ function App() {
   }, [winner, loser]);
 
   return (
-    <div className="App dark:bg-black min-h-screen">
+    <div className="App dark:bg-black min-h-screen flex flex-col items-center">
       <header className="p-4 flex justify-center items-center gap-4">
         <div className="bg-[url('./assets/hangman_logo.svg')] dark:bg-[url('./assets/hangman_logo_dark_mode.svg')] h-12 w-12 md:h-20 md:w-20" />
         <h1 className="dark:text-gray-400 text-3xl md:text-6xl font-semibold uppercase">
@@ -95,7 +95,7 @@ function App() {
         getWord={getWord}
       />
       <LanguageSwitch />
-      <div className="flex flex-col gap-8 my-0 mx-auto items-center p-4 justify-center max-w-5xl">
+      <div className="flex flex-col gap-6 my-0 mx-3 items-center p-4 justify-center max-w-5xl md:border-gray-200 md:border-solid md:border md:rounded-lg md:shadow-xl">
         <p
           className={`text-2xl font-semibold md:text-3xl text-center dark:text-gray-400 h-8 md:h-9 ${
             loser || winner ? "visible" : "invisible"

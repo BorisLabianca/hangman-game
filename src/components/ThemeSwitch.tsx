@@ -58,7 +58,7 @@ const ThemeSwitch = () => {
     }
   });
   return (
-    <div className="duration-200 text-gray-400 dark:text-gray-300 rounded-lg flex flex-col-reverse items-center mb-4 fixed top-16 right-1">
+    <div className="duration-200 text-gray-400 dark:text-gray-300 rounded-lg flex flex-col-reverse md:flex-row items-center mb-4 fixed top-16 right-1">
       {options.map((option) => {
         return (
           <div

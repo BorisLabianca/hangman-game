@@ -22,7 +22,7 @@ const DifficultySwitch = ({
   const language = useAppSelector((state) => state.language.language);
 
   return (
-    <div className="duration-200 text-gray-400 dark:text-gray-300 rounded-lg flex flex-col items-center mb-4 fixed">
+    <div className="duration-200 text-gray-400 dark:text-gray-300 rounded-lg flex flex-col items-center mb-4 fixed top-16 left-1">
       {language === "en"
         ? languageSwitch[language].levelOptions.map((option) => {
             return (
