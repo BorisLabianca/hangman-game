@@ -1,6 +1,6 @@
 # <img src="https://user-images.githubusercontent.com/114598539/223701494-e2a33f99-b24d-4efb-a556-cd8b311efec5.svg" width="50" height="50" alt="JavaScript" /> Hangman Game
 
-<img width="1725" alt="Capture d’écran 2023-03-08 à 17 39 51" src="https://user-images.githubusercontent.com/114598539/223774340-4518d0aa-325a-42df-b67d-9a5f416a2e38.png">
+<img width="1725" alt="Capture d’écran 2023-03-08 à 17 39 51" src="https://user-images.githubusercontent.com/114598539/224559816-7be93653-2f3b-4205-b449-a03cd29e92e7.gif">
 
 ## Techs Used
 
