@@ -4,9 +4,7 @@ import "./App.css";
 import languageSwitch from "./assets/languageSwitch.json";
 
 // Components imports
-import ThemeSwitch from "./components/ThemeSwitch";
-import DifficultySwitch from "./components/DifficultySwitch";
-import LanguageSwitch from "./components/LanguageSwitch";
+import Header from "./components/Header";
 import HangmanDrawing from "./components/HangmanDrawing";
 import HangmanWord from "./components/HangmanWord";
 import Keyboard from "./components/Keyboard";
@@ -80,21 +78,11 @@ function App() {
 
   return (
     <div className="App dark:bg-black min-h-screen flex flex-col items-center">
-      <header className="p-4 flex justify-center items-center gap-4">
-        <div className="bg-[url('./assets/hangman_logo.svg')] dark:bg-[url('./assets/hangman_logo_dark_mode.svg')] h-12 w-12 md:h-20 md:w-20" />
-        <h1 className="dark:text-gray-400 text-3xl md:text-6xl font-semibold uppercase">
-          {language === "en"
-            ? languageSwitch.en.title
-            : language === "fr" && languageSwitch.fr.title}
-        </h1>
-      </header>
-      <ThemeSwitch />
-      <DifficultySwitch
+      <Header
+        getWord={getWord}
         setWordToGuess={setWordToGuess}
         setGuessedLetters={setGuessedLetters}
-        getWord={getWord}
       />
-      <LanguageSwitch />
       <div className="flex flex-col gap-6 my-0 mx-3 items-center p-4 justify-center max-w-5xl md:border-gray-200 md:border-solid md:border md:rounded-lg md:shadow-xl">
         <p
           className={`text-2xl font-semibold md:text-3xl text-center dark:text-gray-400 h-8 md:h-9 ${

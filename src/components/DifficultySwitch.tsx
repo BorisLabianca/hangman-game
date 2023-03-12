@@ -2,6 +2,7 @@ import { useAppDispatch, useAppSelector } from "../hooks";
 
 // Slice related imports
 import { setDifficulty } from "../features/difficulty/difficultySlice";
+import { toggleDropdown } from "../features/dropdown/dropdownSlice";
 
 // Language content import
 import languageSwitch from "../assets/languageSwitch.json";
@@ -20,22 +21,30 @@ const DifficultySwitch = ({
   const dispatch = useAppDispatch();
   const difficulty = useAppSelector((state) => state.difficulty.level);
   const language = useAppSelector((state) => state.language.language);
+  const isOpen = useAppSelector((state) => state.dropdown.isOpen);
 
   return (
-    <div className="duration-200 text-gray-400 dark:text-gray-300 rounded-lg flex flex-col items-center mb-4 fixed top-16 left-1">
+    <div
+      className={`duration-200 text-gray-400 dark:text-gray-300 rounded-lg flex flex-col items-center md:mb-4 md:fixed md:top-16 md:left-1 ease-in-out md:w-fit md:h-fit md:overflow-visible ${
+        !isOpen && "h-0 w-0 overflow-hidden"
+      }`}
+    >
       {language === "en"
         ? languageSwitch[language].levelOptions.map((option) => {
             return (
               <div
                 key={option.level}
-                className={`h-8 leading-9 rounded-full flex justify-center items-center ${
+                className={`md:h-8 leading-9 rounded-full flex justify-center items-center ${
                   difficulty === option.level && "text-sky-600"
-                } font-bold cursor-pointer`}
+                } font-bold cursor-pointer ${
+                  !isOpen && "h-0 w-0 overflow-hidden"
+                } duration-200 ease-in-out md:overflow-visible `}
                 onClick={() => {
                   difficulty !== option.level &&
                     dispatch(setDifficulty(option.level));
                   difficulty !== option.level && setGuessedLetters([]);
                   difficulty !== option.level && setWordToGuess(getWord());
+                  dispatch(toggleDropdown());
                 }}
               >
                 {option.text}
@@ -47,14 +56,17 @@ const DifficultySwitch = ({
             return (
               <div
                 key={option.level}
-                className={`h-8 leading-9 rounded-full flex justify-center items-center ${
+                className={`md:h-8 leading-9 rounded-full flex justify-center items-center ${
                   difficulty === option.level && "text-sky-600"
-                } font-bold cursor-pointer`}
+                } font-bold cursor-pointer ${
+                  !isOpen && "h-0 w-0 overflow-hidden"
+                } duration-200 ease-in-out md:overflow-visible `}
                 onClick={() => {
                   difficulty !== option.level &&
                     dispatch(setDifficulty(option.level));
                   difficulty !== option.level && setGuessedLetters([]);
                   difficulty !== option.level && setWordToGuess(getWord());
+                  dispatch(toggleDropdown());
                 }}
               >
                 {option.text}

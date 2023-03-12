@@ -8,6 +8,8 @@ const options = [{ language: "en" }, { language: "fr" }];
 const LanguageSwitch = () => {
   const dispatch = useAppDispatch();
   const language = useAppSelector((state) => state.language.language);
+  const isOpen = useAppSelector((state) => state.dropdown.isOpen);
+
   const handleClick = (option: string) => {
     if (language !== option) {
       dispatch(switchLanguage(option));
@@ -18,14 +20,20 @@ const LanguageSwitch = () => {
     }
   };
   return (
-    <div className="duration-200 text-gray-400 dark:text-gray-300 rounded-lg flex flex-col items-center mb-4 fixed top-40 right-2">
+    <div
+      className={`duration-200 ease-in-out text-gray-400 dark:text-gray-300 rounded-lg flex flex-col items-center md:mb-4 md:fixed md:top-40 md:right-2 md:h-18 md:w-fit md:overflow-visible ${
+        !isOpen && "h-0 w-0 overflow-hidden"
+      }`}
+    >
       {options.map((option) => {
         return (
           <div
             key={option.language}
-            className={`h-8 w-auto text-lg leading-9 rounded-full flex justify-center items-center ${
+            className={`h-8 w-auto text-lg leading-9 rounded-full flex justify-center items-center md:overflow-visible  ${
               language === option.language && "text-sky-600"
-            } font-bold cursor-pointer`}
+            } font-bold cursor-pointer ${
+              !isOpen && "h-0 w-0 overflow-hidden"
+            } duration-200 ease-in-out`}
             onClick={() => {
               handleClick(option.language);
             }}
