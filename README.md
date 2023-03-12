@@ -24,4 +24,3 @@
 ## Comments
 
 First attempt at using TypeScript in a project.
-All features working, design incomplete.
