@@ -80,14 +80,14 @@ function App() {
   }, [winner, loser]);
 
   return (
-    <div className="App dark:bg-black min-h-screen flex flex-col items-center">
+    <div className="App dark:bg-black min-h-screen flex flex-col items-center md:gap-10">
       <Header
         getWord={getWord}
         setWordToGuess={setWordToGuess}
         setGuessedLetters={setGuessedLetters}
       />
       <div className="flex flex-col gap-6 my-0 mx-3 items-center p-4 justify-center max-w-5xl md:border-gray-200 md:border-solid md:border md:rounded-lg md:shadow-xl md:dark:shadow-[0px_2px_10px_rgba(225,225,225,0.5)] md:dark:bg-gray-900 md:dark:border-none md:relative">
-        <div className="hidden rounded-lg dark:bg-slate-800 dark:drop-shadow-[0px_2px_10px_rgba(225,225,225,0.5)] bg-gray-100 md:flex justify-center items-center gap-6 md:flex-col md:absolute md:right-4 md:top-28 md:p-2 md:drop-shadow-lg min-[1100px]:right-4 min-[1100px]:fixed min-[1100px]:top-56">
+        <div className="hidden rounded-lg dark:bg-slate-800 dark:drop-shadow-[0px_2px_10px_rgba(225,225,225,0.5)] bg-gray-100 md:flex justify-center items-center gap-6 md:flex-col md:absolute md:right-4 md:top-28 md:p-2 md:drop-shadow-lg min-[1100px]:right-4 min-[1100px]:fixed min-[1100px]:top-[264px]">
           <ThemeSwitch />
           <LanguageSwitch />
           <DifficultySwitch
