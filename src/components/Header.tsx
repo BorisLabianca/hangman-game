@@ -57,7 +57,11 @@ const Header = ({
         }}
         ref={hamburgerRef}
       >
-        <FaBars className="dark:text-gray-400" />
+        <FaBars
+          className={`dark:text-gray-400 duration-200 ease-in-out ${
+            isOpen && "rotate-90"
+          }`}
+        />
       </div>
 
       <div
