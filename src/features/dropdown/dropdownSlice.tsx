@@ -1,4 +1,4 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { RootState } from "../store";
 
 interface InitialState {
@@ -13,8 +13,8 @@ const dropdownSlice = createSlice({
   name: "dropdown",
   initialState,
   reducers: {
-    toggleDropdown: (state) => {
-      state.isOpen = !state.isOpen;
+    toggleDropdown: (state, action: PayloadAction<boolean>) => {
+      state.isOpen = action.payload;
     },
   },
 });

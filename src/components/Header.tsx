@@ -33,7 +33,7 @@ const Header = ({
         !hamburgerRef.current?.contains(event.target) &&
         !dropdownRef.current?.contains(event.target)
       ) {
-        dispatch(toggleDropdown());
+        dispatch(toggleDropdown(false));
       }
     };
     document.addEventListener("click", handleClickOutside);
@@ -45,7 +45,7 @@ const Header = ({
   return (
     <header className="p-4 flex justify-center items-center gap-2 md:gap-4">
       <div className="bg-[url('./assets/hangman_logo.svg')] dark:bg-[url('./assets/hangman_logo_dark_mode.svg')] h-7 w-7 md:h-20 md:w-20" />
-      <h1 className="dark:text-gray-400 text-2xl md:text-6xl font-semibold uppercase">
+      <h1 className="dark:text-gray-400 text-2xl md:text-6xl font-semibold uppercase flex items-center">
         {language === "en"
           ? languageSwitch.en.title
           : language === "fr" && languageSwitch.fr.title}
@@ -53,7 +53,7 @@ const Header = ({
       <div
         className="text-2xl absolute right-4 visible md:invisible"
         onClick={() => {
-          dispatch(toggleDropdown());
+          dispatch(toggleDropdown(!isOpen));
         }}
         ref={hamburgerRef}
       >
@@ -68,15 +68,6 @@ const Header = ({
         } md:hidden duration-200 ease-in-out z-10`}
         ref={dropdownRef}
       >
-        <ThemeSwitch />
-        <DifficultySwitch
-          setWordToGuess={setWordToGuess}
-          setGuessedLetters={setGuessedLetters}
-          getWord={getWord}
-        />
-        <LanguageSwitch />
-      </div>
-      <div className="hidden md:block">
         <ThemeSwitch />
         <DifficultySwitch
           setWordToGuess={setWordToGuess}

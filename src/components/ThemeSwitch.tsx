@@ -63,7 +63,7 @@ const ThemeSwitch = () => {
 
   return (
     <div
-      className={`duration-200 ease-in-out text-gray-400 dark:text-gray-300 rounded-lg flex flex-col-reverse md:flex-row items-center md:mb-4 md:fixed md:top-16 md:right-1 ${
+      className={`duration-200 ease-in-out text-gray-400 dark:text-gray-300 rounded-lg flex flex-col-reverse md:w-fit md:h-fit md:flex-row items-center ${
         !isOpen && "h-0 w-0"
       }`}
     >
@@ -78,7 +78,7 @@ const ThemeSwitch = () => {
             } duration-200 ease-in-out`}
             onClick={() => {
               dispatch(switchTheme(option.text));
-              dispatch(toggleDropdown());
+              isOpen && dispatch(toggleDropdown(false));
             }}
           >
             {option.icon}

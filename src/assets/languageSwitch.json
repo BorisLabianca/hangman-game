@@ -3,6 +3,7 @@
     "title": "Hangman Game",
     "lost": "You lost!!!",
     "won": "You won!!!",
+    "button": "New game",
     "levelOptions": [
       { "level": "easy", "text": "easy" },
       { "level": "medium", "text": "medium" },
@@ -866,6 +867,7 @@
     "title": "Le pendu",
     "lost": "Vous avez perdu !!!",
     "won": "Vous avez gagné !!!",
+    "button": "Nouvelle partie",
     "levelOptions": [
       { "level": "easy", "text": "facile" },
       { "level": "medium", "text": "moyen" },

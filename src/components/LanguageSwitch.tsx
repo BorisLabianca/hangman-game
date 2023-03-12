@@ -2,6 +2,7 @@ import { useAppDispatch, useAppSelector } from "../hooks";
 
 // Slice related imports
 import { switchLanguage } from "../features/languages/languageSlice";
+import { toggleDropdown } from "../features/dropdown/dropdownSlice";
 
 const options = [{ language: "en" }, { language: "fr" }];
 
@@ -13,6 +14,7 @@ const LanguageSwitch = () => {
   const handleClick = (option: string) => {
     if (language !== option) {
       dispatch(switchLanguage(option));
+      isOpen && dispatch(toggleDropdown(false));
       localStorage.setItem("language", option);
       window.location.reload();
     } else {
@@ -21,7 +23,7 @@ const LanguageSwitch = () => {
   };
   return (
     <div
-      className={`duration-200 ease-in-out text-gray-400 dark:text-gray-300 rounded-lg flex flex-col items-center md:mb-4 md:fixed md:top-40 md:right-2 md:h-18 md:w-fit md:overflow-visible ${
+      className={`duration-200 ease-in-out text-gray-400 dark:text-gray-300 rounded-lg flex flex-col items-center md:h-fit md:flex-row md:gap-3 md:w-fit md:overflow-visible ${
         !isOpen && "h-0 w-0 overflow-hidden"
       }`}
     >

@@ -25,7 +25,7 @@ const DifficultySwitch = ({
 
   return (
     <div
-      className={`duration-200 text-gray-400 dark:text-gray-300 rounded-lg flex flex-col items-center md:mb-4 md:fixed md:top-16 md:left-1 ease-in-out md:w-fit md:h-fit md:overflow-visible ${
+      className={`duration-200 text-gray-400 dark:text-gray-300 rounded-lg flex flex-col items-center ease-in-out md:w-fit md:h-fit md:overflow-visible ${
         !isOpen && "h-0 w-0 overflow-hidden"
       }`}
     >
@@ -34,7 +34,7 @@ const DifficultySwitch = ({
             return (
               <div
                 key={option.level}
-                className={`md:h-8 leading-9 rounded-full flex justify-center items-center ${
+                className={`h-8 w-auto leading-9 rounded-full flex justify-center items-center ${
                   difficulty === option.level && "text-sky-600"
                 } font-bold cursor-pointer ${
                   !isOpen && "h-0 w-0 overflow-hidden"
@@ -44,7 +44,7 @@ const DifficultySwitch = ({
                     dispatch(setDifficulty(option.level));
                   difficulty !== option.level && setGuessedLetters([]);
                   difficulty !== option.level && setWordToGuess(getWord());
-                  dispatch(toggleDropdown());
+                  isOpen && dispatch(toggleDropdown(false));
                 }}
               >
                 {option.text}
@@ -66,7 +66,7 @@ const DifficultySwitch = ({
                     dispatch(setDifficulty(option.level));
                   difficulty !== option.level && setGuessedLetters([]);
                   difficulty !== option.level && setWordToGuess(getWord());
-                  dispatch(toggleDropdown());
+                  dispatch(toggleDropdown(false));
                 }}
               >
                 {option.text}
